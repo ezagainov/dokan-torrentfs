@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CF884527-F5C3-4C59-8171-EC685399C250}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DokanTorrentGUI\DokanTorrentGUI.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DokanTorrentGUI">
+        <MSBuild Projects="DokanTorrentGUI\DokanTorrentGUI.dproj"/>
+    </Target>
+    <Target Name="DokanTorrentGUI:Clean">
+        <MSBuild Projects="DokanTorrentGUI\DokanTorrentGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DokanTorrentGUI:Make">
+        <MSBuild Projects="DokanTorrentGUI\DokanTorrentGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DokanTorrentGUI"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DokanTorrentGUI:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DokanTorrentGUI:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

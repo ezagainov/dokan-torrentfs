@@ -1,2 +1,2 @@
 # dokan-torrentfs
-Delphi realisation of torrent filesystem using Dokany
+Delphi realization of torrent filesystem using Dokany
